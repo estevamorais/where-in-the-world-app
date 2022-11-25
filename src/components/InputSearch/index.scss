@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+@import "../../styles/mixings";
+
+.input-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  background-color: var(--elements);
+  border-radius: var(--radius);
+
+  @include at-query($min, $medium) {
+    max-width: 440px;
+  }
+
+  ion-icon {
+    width: 1.3rem;
+    position: absolute;
+    left: 1.5rem;
+    cursor: text;
+  }
+
+  input {
+    padding-left: 4rem;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    color: var(--text);
+
+    border-radius: var(--radius);
+    box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+
+    &::placeholder {
+      color: var(--text);
+      opacity: 0.7;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.25);
+    }
+  }
+}

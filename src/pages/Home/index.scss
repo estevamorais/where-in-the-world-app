@@ -1,0 +1,76 @@
+@import "../../styles/variables";
+@import "../../styles/mixings";
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding-top: 3rem;
+
+  @include at-query($min, $small) {
+    gap: 2rem;
+    flex-direction: row;
+  }
+
+  * {
+    height: 3.5rem;
+  }
+}
+
+.list {
+  padding: 3rem 2rem;
+
+  @include at-query($min, $small) {
+    padding: 3rem 0;
+  }
+}
+
+.list__items {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+
+  @include at-query($min, $small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include at-query($min, $medium) {
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include at-query($min, $large) {
+    gap: 4rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.list__error,
+.list__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-weight: 400;
+  text-align: center;
+
+  @include at-query($min, $medium) {
+    font-size: 1.2rem;
+  }
+
+  span {
+    font-weight: 800;
+  }
+}
+
+.list__loading {
+  ion-icon {
+    animation: rotating 1400ms linear infinite;
+    width: 2rem;
+    height: 2rem;
+  }
+}
