@@ -48,30 +48,3 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
-.list__error,
-.list__loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  font-weight: 400;
-  text-align: center;
-
-  @include at-query($min, $medium) {
-    font-size: 1.2rem;
-  }
-
-  span {
-    font-weight: 800;
-  }
-}
-
-.list__loading {
-  ion-icon {
-    animation: rotating 1400ms linear infinite;
-    width: 2rem;
-    height: 2rem;
-  }
-}

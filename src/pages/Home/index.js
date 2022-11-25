@@ -6,6 +6,8 @@ import { useFetch } from "../../hooks/useFetch";
 import Select from "../../components/Select";
 import InputSearch from "../../components/InputSearch";
 import ItemCountry from "../../components/ItemCountry";
+import Error from "../../components/Error";
+import Loading from "../../components/Loading";
 
 const Home = () => {
   const { data, loading, error } = useFetch(
@@ -77,17 +79,10 @@ const Home = () => {
       </div>
 
       <div className="list">
-        {error && (
-          <div className="list__error">
-            <p>{error}</p>
-          </div>
-        )}
-        {loading && (
-          <div className="list__loading">
-            <ion-icon name="refresh-outline"></ion-icon>
-            <span>Loading data...</span>
-          </div>
-        )}
+        <Error error={error} />
+
+        <Loading loading={loading} />
+
         {Object.keys(countriesFiltred).length !== 0 ? (
           <ul className="list__items">
             {countriesFiltred.map((country, i) => (
@@ -95,21 +90,14 @@ const Home = () => {
             ))}
           </ul>
         ) : (
-          <div className="list__error">
-            <p>
-              {search && (
-                <>
-                  No countries found for <span>{search}</span>
-                </>
-              )}
-              {region && (
-                <>
-                  {" "}
-                  in the <span>{region}</span>
-                </>
-              )}
-            </p>
-          </div>
+          <Error
+            error={
+              search
+                ? `No countries found for "${search}"` +
+                  (region ? ` in the "${region}"` : "")
+                : ""
+            }
+          />
         )}
       </div>
     </div>
