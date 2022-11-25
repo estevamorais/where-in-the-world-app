@@ -10,6 +10,11 @@
 .navbar__title {
   font-size: 1.15rem;
 
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
   @include at-query($min, $medium) {
     font-size: 1.325rem;
   }
