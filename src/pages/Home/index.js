@@ -52,8 +52,8 @@ const Home = () => {
   }, [data]);
 
   return (
-    <>
-      <div className="filters container">
+    <div className="container">
+      <div className="filters">
         <InputSearch
           name="search"
           value={search}
@@ -77,44 +77,42 @@ const Home = () => {
       </div>
 
       <div className="list">
-        <div className="container">
-          {error && (
-            <div className="list__error">
-              <p>{error}</p>
-            </div>
-          )}
-          {loading && (
-            <div className="list__loading">
-              <ion-icon name="refresh-outline"></ion-icon>
-              <span>Loading data...</span>
-            </div>
-          )}
-          {Object.keys(countriesFiltred).length !== 0 ? (
-            <ul className="list__items">
-              {countriesFiltred.map((country, i) => (
-                <ItemCountry key={`country-${i}`} country={country} />
-              ))}
-            </ul>
-          ) : (
-            <div className="list__error">
-              <p>
-                {search && (
-                  <>
-                    No countries found for <span>{search}</span>
-                  </>
-                )}
-                {region && (
-                  <>
-                    {" "}
-                    in the <span>{region}</span>
-                  </>
-                )}
-              </p>
-            </div>
-          )}
-        </div>
+        {error && (
+          <div className="list__error">
+            <p>{error}</p>
+          </div>
+        )}
+        {loading && (
+          <div className="list__loading">
+            <ion-icon name="refresh-outline"></ion-icon>
+            <span>Loading data...</span>
+          </div>
+        )}
+        {Object.keys(countriesFiltred).length !== 0 ? (
+          <ul className="list__items">
+            {countriesFiltred.map((country, i) => (
+              <ItemCountry key={`country-${i}`} country={country} />
+            ))}
+          </ul>
+        ) : (
+          <div className="list__error">
+            <p>
+              {search && (
+                <>
+                  No countries found for <span>{search}</span>
+                </>
+              )}
+              {region && (
+                <>
+                  {" "}
+                  in the <span>{region}</span>
+                </>
+              )}
+            </p>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
