@@ -20,7 +20,7 @@ const Borders = ({ bordersStr }) => {
           code: country.cca3,
           to: `/country/${country.cca3}/${country.name.common
             .toLowerCase()
-            .replace(" ", "-")}`,
+            .replaceAll(" ", "-")}`,
           name: country.name.common,
         });
       });

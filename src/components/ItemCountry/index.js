@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const ItemCountry = ({ country }) => {
   const to = `/country/${country.cca3}/${country.name.common
     .toLowerCase()
-    .replace(" ", "-")}`;
+    .replaceAll(" ", "-")}`;
 
   return (
     <li className="item-country">
