@@ -3,9 +3,12 @@
 
 .select {
   width: 100%;
-  max-width: 230px;
   background-color: var(--elements);
   border-radius: var(--radius);
+
+  @include at-query($min, $medium) {
+    max-width: 230px;
+  }
 
   * {
     height: 3.5rem;
