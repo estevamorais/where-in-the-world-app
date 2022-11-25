@@ -1,12 +1,12 @@
-@import "./styles/_variables.scss";
-@import "./styles/_mixings.scss";
-@import "./styles/_utilities.scss";
+@import "./styles/variables";
+@import "./styles/mixings";
+@import "./styles/reset";
+@import "./styles/utilities";
 
 :root {
   --text: hsl(200, 15%, 8%);
   --bg: hsl(0, 0%, 98%);
   --elements: hsl(0, 0%, 100%);
-  --input: hsl(0, 0%, 52%);
   --small: $small;
   --medium: $medium;
   --large: $large;
@@ -14,19 +14,20 @@
   --xx-large: $xx-large;
   --font: "Nunito Sans", sans-serif;
   --transition: all 200ms ease-in-out;
-  --radius: 0.5rem;
+  --radius: 0.325rem;
 }
 
 [data-theme="dark"] {
   --text: hsl(0, 0%, 100%);
   --bg: hsl(207, 26%, 17%);
   --elements: hsl(209, 23%, 22%);
-  --input: hsl(0, 0%, 100%);
 }
 
 * {
   box-sizing: border-box;
   font-family: var(--font);
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -34,4 +35,9 @@ body {
   padding: 0;
   background-color: var(--bg);
   color: var(--text);
+}
+
+ul,
+ol {
+  list-style: none;
 }
