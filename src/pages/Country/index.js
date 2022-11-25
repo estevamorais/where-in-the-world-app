@@ -93,7 +93,9 @@ const Country = () => {
                   </li>
                 ))}
               </ul>
-              <Borders bordersStr={country.borders.join(",")} />
+              {country.borders && (
+                <Borders bordersStr={country.borders.join(",")} />
+              )}
             </div>
           </div>
         )}
