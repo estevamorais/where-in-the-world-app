@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 
 // pages
 import Home from "./pages/Home";
+import Country from "./pages/Country";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/country/:code/:slug" element={<Country />} />
         </Routes>
       </BrowserRouter>
     </div>

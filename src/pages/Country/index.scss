@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+@import "../../styles/mixings";
+
+.country {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.country__flag {
+  box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+.country__data {
+  margin-top: 4rem;
+
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+
+  @include at-query($min, $medium) {
+    gap: 8rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.country__name {
+  margin-bottom: 1.5rem;
+
+  @include at-query($max, $medium) {
+    margin-top: 1.5rem;
+  }
+}
+
+.country__info {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 4rem;
+
+  span {
+    font-weight: 600;
+  }
+
+  @include at-query($min, $medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

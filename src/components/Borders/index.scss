@@ -1,0 +1,22 @@
+@import "../../styles/utilities";
+@import "../../styles/mixings";
+
+.borders {
+  display: grid;
+  gap: 1rem;
+
+  @include at-query($min, $large) {
+    display: flex;
+  }
+
+  p {
+    white-space: nowrap;
+    margin-top: 0.5rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
